@@ -1,7 +1,9 @@
-// Import required packages
+// Import required packages/ import routes
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const apiRouter = require('./routes/apiRoutes');
+const htmlRouter = require('./routes/htmlRoutes');
 
 // Initialize an instance of Express.js
 const app = express();
@@ -16,10 +18,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/public/assets', express.static(__dirname + '/public/assets'));
-
-// Require routes
-require('./routes/apiRoutes')(app);
-require('./routes/htmlRoutes')(app);
 
 // Start server to begin listening 
 app.listen(PORT, () => {
