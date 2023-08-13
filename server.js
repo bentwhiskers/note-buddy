@@ -1,10 +1,8 @@
 // Import required packages/ import routes
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
-const apiRouter = require('./routes/apiRoutes');
-const htmlRouter = require('./routes/htmlRoutes');
-
+const api = require('./routes/index.js');
+const uuid = require('./helpers/uuid.js');
 // Initialize an instance of Express.js
 const app = express();
 
@@ -18,6 +16,19 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/public/assets', express.static(__dirname + '/public/assets'));
+app.use('/api', api);
+
+// route to the notes.html file
+app.get("/notes", (req, res) => {
+   
+  res.sendFile(path.join(__dirname, "public/notes.html"));
+});
+
+
+app.use("*", (req, res) => {
+    
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
 // Start server to begin listening 
 app.listen(PORT, () => {
