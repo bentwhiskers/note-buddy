@@ -1,13 +1,13 @@
 {
-    "name": "note-taker",
+    "name": "note-buddy",
     "version": "1.0.0",
-    "description": "",
+    "description": "This note-taker app allows the user to write and save notes. It uses Express.js on the back end and saves the notes in a db.json file, and allows the user to retrieve the saved notes at a later date. ",
     "main": "server.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Erica Abbott",
+    "license": "MIT",
     "dependencies": {
       "express": "^4.16.4"
     }
