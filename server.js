@@ -7,7 +7,7 @@ const uuid = require('./helpers/uuid.js');
 const app = express();
 
 // Specify the port that Express.js will run on
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Static middleware pointing to the public folder
 app.use(express.static('public'));
@@ -31,6 +31,6 @@ app.use("*", (req, res) => {
 });
 
 // Start server to begin listening 
-app.listen(PORT, () => {
-    console.log(`App listening at http://localhost:${PORT} 🚀`)
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`App listening at http://0.0.0.0:${PORT} 🚀`)
 });

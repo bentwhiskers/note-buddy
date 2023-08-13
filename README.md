@@ -11,7 +11,10 @@ This note-taker app allows the user to write and save notes. It uses Express.js 
 5. [Contact](#contact)
 
 ## Usage
-To use: 
+To use: copy code to local code editor. Run 'node server.js' in terminal to use on localhost:3001.
+
+Heroku link: 
+> https://note-buddy-71f65bff652e.herokuapp.com/
 
 ## Credits
 apiRoutes.js - lines 34-41 are credited to: https://www.tabnine.com/code/javascript/functions/express/Express/delete
