@@ -16,6 +16,8 @@ To use: copy code to local code editor. Run 'node server.js' in terminal to use 
 Heroku link: 
 > https://note-buddy-71f65bff652e.herokuapp.com/
 
+<img src='./images/ss.png' alt='image of note taker app' />
+
 ## Credits
 apiRoutes.js - lines 34-41 are credited to: https://www.tabnine.com/code/javascript/functions/express/Express/delete
 
