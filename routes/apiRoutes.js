@@ -1,8 +1,10 @@
 const fs = require('fs');
+const express = require('express');
 const db = require('../db/db.json');
 const uuid = require('../helpers/uuid.js');
 var apiRouter = require('express').Router();
 
+const app = express();
 // GET Route to read the db.json file and return all saved notes as JSON
 app.get('/api/notes', (req, res) => {
     fs.readFile('./db/db.json', (err, data) => {
@@ -26,6 +28,16 @@ app.post('/api/notes', (req, res) => {
     fs.writeFileSync('./db/db.json', JSON.stringify(db));
 
     res.json(db)
-})
+});
+
+// DELETE Route to delete a note by the id number
+app.delete('/api/notes/:id', (req, res) => {
+    const { id } = req.params;
+
+    const delNote = notes.findIndex(note => note.id == id);
+
+    notes.splice(delNote, 1);
+    return res.send();
+});
 
 module.exports = apiRouter;

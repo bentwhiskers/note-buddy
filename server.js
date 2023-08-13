@@ -2,8 +2,8 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const apiRouter = require('/routes/apiRoutes');
-const htmlRouter = require('/routes/htmlRoutes');
+const apiRouter = require('./routes/apiRoutes');
+const htmlRouter = require('./routes/htmlRoutes');
 
 // Initialize an instance of Express.js
 const app = express();
