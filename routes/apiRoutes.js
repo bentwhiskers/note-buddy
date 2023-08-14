@@ -1,8 +1,8 @@
-const notes = require('express').Router();
+const apiRoutes = require('express').Router();
 const fs = require('fs');
 const uuid = require('../helpers/uuid');
 
-notes.get('/', (req,res) => {
+apiRoutes.get('/', (req,res) => {
     fs.readfile('./db/db.json', 'utf8', (err, data) => {
         if (err) {
             throw err;
@@ -12,7 +12,7 @@ notes.get('/', (req,res) => {
     });
 });
 
-notes.post('/', (req,res) => {
+apiRoutes.post('/', (req,res) => {
     const { title, text } = req.body;
     if (title && text) {
         const newNote = {
@@ -52,7 +52,7 @@ notes.post('/', (req,res) => {
     
 });
 
-notes.delete('/api/notes/:id', (req, res) => {
+apiRoutes.delete('/api/notes/:id', (req, res) => {
     const { id } = req.params;
   
     const delNote = notes.findIndex(note => note.id ==id);
